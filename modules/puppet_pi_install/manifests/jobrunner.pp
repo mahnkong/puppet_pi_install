@@ -6,6 +6,7 @@ class puppet_pi_install::jobrunner {
 
   exec {'/bin/sh -c "cd /tmp && git clone https://github.com/mahnkong/rpi-jobrunner.git && cd rpi-jobrunner && bundle install && rake install && cd /tmp && rm -rf rpi-jobrunner"':
     require => Exec['/usr/bin/gem install bundler'],
+    notify  => File['/etc/systemd/system/jobrunner.service'],
     creates => "/usr/local/bin/jobrunner"
   }
 

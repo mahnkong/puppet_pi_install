@@ -1,8 +1,4 @@
 class puppet_pi_install::mounts {
-  file { '/mnt/usb':
-    ensure => 'directory',
-    notify =>  Exec['/bin/mount -a']
-  }
   file { '/mnt/hdd':
     ensure => 'directory',
     notify =>  Exec['/bin/mount -a']
