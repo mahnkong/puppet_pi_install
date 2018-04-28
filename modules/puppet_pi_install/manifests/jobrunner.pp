@@ -18,10 +18,10 @@ class puppet_pi_install::jobrunner {
 
   exec {'/bin/systemctl enable jobrunner.service':
     refreshonly => true,
-    notify      => Exec['/bin/systemctl start jobrunner.service']
+    notify      => Exec['/bin/systemctl restart jobrunner.service']
   }
 
-  exec {'/bin/systemctl start jobrunner.service':
+  exec {'/bin/systemctl restart jobrunner.service':
     refreshonly => true,
   }
 

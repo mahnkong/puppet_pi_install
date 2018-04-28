@@ -8,10 +8,10 @@ class puppet_pi_install::rpi_notifier {
 
   exec {'/bin/systemctl enable rpi_notifier.service':
     refreshonly => true,
-    notify      => Exec['/bin/systemctl start rpi_notifier.service']
+    notify      => Exec['/bin/systemctl restart rpi_notifier.service']
   }
 
-  exec {'/bin/systemctl start rpi_notifier.service':
+  exec {'/bin/systemctl restart rpi_notifier.service':
     refreshonly => true,
   }
 
