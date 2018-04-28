@@ -1,0 +1,10 @@
+[Unit]
+Description=Jobrunner systemd service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/local/bin/jobrunner <%= @private_conf_sources_dir %>/jobrunner/jobrunner-config.yaml
+
+[Install]
+WantedBy=multi-user.target

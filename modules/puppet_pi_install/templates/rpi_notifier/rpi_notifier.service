@@ -1,0 +1,10 @@
+[Unit]
+Description=Jobrunner systemd service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=<%= @private_sources_dir %>/bin/rpi_notifier <%= @private_conf_sources_dir %>/rpi_notifier/config.json
+
+[Install]
+WantedBy=multi-user.target
