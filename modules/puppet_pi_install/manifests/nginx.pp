@@ -16,6 +16,7 @@ class puppet_pi_install::nginx {
   }
 
   exec {'/bin/systemctl start nginx':
+    require => File['/etc/letsencrypt'],
     refreshonly =>  true,
   }
 }

@@ -9,4 +9,10 @@ class puppet_pi_install {
     include puppet_pi_install::rpi_notifier
     include puppet_pi_install::certbot
     include puppet_pi_install::tools
+
+    file { "/home/pi/.config":
+        owner  => "pi",
+        group  => "pi",
+        ensure =>  'directory'
+    }
 }
