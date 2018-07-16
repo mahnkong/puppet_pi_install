@@ -20,10 +20,14 @@ class puppet_pi_install::backup {
   }
 
   file { "/home/pi/.config/rclone":
+    owner  =>  'pi',
+    group  =>  'pi',
     ensure => "directory"
   }
 
   file { "/home/pi/.config/rclone/rclone.conf":
+    owner  =>  'pi',
+    group  =>  'pi',
     source => "${::private_conf_sources_dir}/rclone/rclone.conf"
   }
 }
