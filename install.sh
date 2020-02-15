@@ -13,4 +13,5 @@ apt update
 if ! which puppet >/dev/null  || [ "$FORCE_PUPPET_INSTALL" != "" ]; then
     apt install puppet
 fi
+
 puppet apply --modulepath ./modules manifests/site.pp
