@@ -15,3 +15,4 @@ if ! which puppet >/dev/null  || [ "$FORCE_PUPPET_INSTALL" != "" ]; then
 fi
 
 puppet apply --modulepath ./modules manifests/site.pp
+echo "To enable ro fs run: puppet apply --modulepath ./modules manifests/run_fs_ro.pp"
