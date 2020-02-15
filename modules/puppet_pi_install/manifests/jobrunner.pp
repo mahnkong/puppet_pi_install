@@ -3,9 +3,12 @@ class puppet_pi_install::jobrunner {
   exec {'/usr/bin/gem install bundler':
     creates =>  "/usr/local/bin/bundler"
   }
+  exec {'/usr/bin/gem install rake':
+    creates =>  "/usr/local/bin/rake"
+  }
 
   exec {'/bin/sh -c "cd /tmp && git clone https://github.com/mahnkong/rpi-jobrunner.git && cd rpi-jobrunner && bundle install && rake install && cd /tmp && rm -rf rpi-jobrunner"':
-    require => Exec['/usr/bin/gem install bundler'],
+    require => Exec['/usr/bin/gem install bundler', '/usr/bin/gem install rake'],
     notify  => File['/etc/systemd/system/jobrunner.service'],
     creates => "/usr/local/bin/jobrunner"
   }
