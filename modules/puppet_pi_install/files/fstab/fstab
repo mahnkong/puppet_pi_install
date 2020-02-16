@@ -4,6 +4,6 @@ proc            /proc           proc    defaults          0       0
 # a swapfile is not a swap partition, no line here
 #   use  dphys-swapfile swap[on|off]  for that
 UUID=5f5f63b7-a942-4c7f-86d1-31d751ca98ac     /mnt/hdd        ext4    defaults        0       0
-tmpfs        /tmp            tmpfs   nosuid,nodev,umask=000         0       0
-tmpfs        /var/log        tmpfs   nosuid,nodev,umask=000         0       0
-tmpfs        /var/tmp        tmpfs   nosuid,nodev,umask=000         0       0
+tmpfs        /tmp            tmpfs   nosuid,nodev         0       0
+tmpfs        /var/log        tmpfs   nosuid,nodev         0       0
+tmpfs        /var/tmp        tmpfs   nosuid,nodev         0       0
